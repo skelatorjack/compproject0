@@ -3,6 +3,9 @@
 
 #include "node.h"
 
-Node* buildTree(FILE *, Node*);
+Tree* buildTree(FILE*, int);
+Tree* insertIntoTree(Tree*, int);
+Tree* createNewNode(int);
+int getLevel(Tree*, int, int);
 
 #endif

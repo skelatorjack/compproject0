@@ -5,14 +5,17 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <string.h>
 
-struct node_t
+struct tree_t
 {
   int key;
-  struct tree* right;
-  struct tree* left;
+  int numOfRepeats;
+  int level;
+  struct tree_t* right;
+  struct tree_t* left;
 };
 
-typedef struct node_t Node;
+typedef struct tree_t Tree;
 
 #endif

@@ -3,8 +3,9 @@
 
 #include "node.h"
 
-void traverseInorder(Node*, const char[]);
-void traversePreorder(Node*, const char[]);
-void traversePostorder(Node*, const char[]);
+void traverseInorder(Tree*);
+void traversePreorder(Tree*);
+void traversePostorder(Tree*);
+
 
 #endif
