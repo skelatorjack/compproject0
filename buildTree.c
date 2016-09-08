@@ -30,10 +30,7 @@ Tree* buildTree(FILE* file, int count)
   for (t = 0; t < count; t++) {
     root = insertIntoTree(root, values[t]);
   }
-
-  for (l = 0; l < count; l++) {
-    root->level = getLevel(root, values[l], 0);
-  }
+  //printf("The level of %d %d\n", 10, getLevel(root, 10, 0));
   printf("\n");
   return root;
   //fclose (fp);
@@ -61,7 +58,6 @@ Tree* createNewNode(int data)
 {
   Tree* node = malloc(sizeof(Tree));
   node->key = data;
-  //node->level = 0;
   node->numOfRepeats = 0;
   node->left = NULL;
   node->right = NULL;
@@ -70,18 +66,20 @@ Tree* createNewNode(int data)
 }
 int getLevel(Tree* node, int data, int level)
 {
+  printf("Key: %d, %d\n", node->key, level);
+
   if (node == NULL) {
     return 0;
   }
-  if (node->key == data) {
+
+  if(node->key == data) {
     return level;
   }
-
-  int downlevel = getLevel(node->left, data, level + 1);
-
-  if (downlevel != 0) {
-    return downlevel;
+  
+  int result = getLevel(node->left, data, level + 1);
+  if (result != 0) {
+    return result;
   }
-   downlevel = getLevel(node->right, data, level + 1);
-   return downlevel;
+  result = getLevel(node->right, data, level + 1);
+  return result;
 }

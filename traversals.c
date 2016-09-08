@@ -9,7 +9,7 @@ void traverseInorder(Tree* root)
   }
   else {
     traverseInorder(root->left);
-    printf("%d:%d:%d\n", root->key, root->numOfRepeats, root->level);
+    printf("%d:%d:%d\n", root->key, root->numOfRepeats, getLevel(root, root->key, 1));
     traverseInorder(root->right);
   }
 }

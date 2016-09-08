@@ -11,7 +11,6 @@ struct tree_t
 {
   int key;
   int numOfRepeats;
-  int level;
   struct tree_t* right;
   struct tree_t* left;
 };
